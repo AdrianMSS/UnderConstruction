@@ -1,0 +1,11 @@
+body{
+    background-color: #000B31;
+    color: white;
+    text-align: center;
+}
+.row{
+    padding: 30px;
+}
+.image{
+    max-width: 80%;
+}

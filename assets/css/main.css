@@ -1,17 +1,18 @@
 body{
-    background: #005949;
-    text-align: center;
-}
-.image{
-    max-width: 80%;
-}
-.content{
+  background: url(../img/paginaHW.png) no-repeat;
+  background-size: 90%;
+  background-position: center;
+  background-color: #005949;
+  text-align: center;
   height: 100vh;
 }
 .bottom{
   position: fixed;
-  width: auto;
-  bottom: 10%;
-  left: 40%;
-  right: 40%;
+  bottom: 20%;
+  left: 30%;
+  right: 30%;
+  max-height: 10%;
+}
+img{
+  width: 100%;
 }

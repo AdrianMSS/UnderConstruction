@@ -1,19 +1,18 @@
 {
-  "name": "ImagineXYZ_UnderConstruction",
-  "version": "0.0.0",
+  "name": "imagineXYZ",
+  "version": "0.2.0",
+  "description": "Imagine Server",
+  "main": "app.js",
+  "engines" : { 
+      "node" : "0.10.31",
+      "npm" : ">=1.4"
+  },
+  "authors": [ "Adrián Sánchez"],
   "dependencies": {
     "express": "3.x",
+    "nodemailer": "*",
     "cookie-parser": "*",
     "body-parser": "*",
-    "cookie-session": "*"
-	},
-  "devDependencies": {
-    "express": "3.x",
-    "cookie-parser": "*",
-    "body-parser": "*",
-    "cookie-session": "*"
-  },
-  "engines": {
-    "node": "0.10.x"
+    "xoauth2": "*"
   }
 }

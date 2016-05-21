@@ -6,7 +6,8 @@ function moveSprite(num){
 	num+=10;
 	setTimeout(moveSprite, 2000, num);
 };
-//Contact Events
+
+//Window Listener
 $(function(){
 	var contactName = false,
 		contactEmail = false,

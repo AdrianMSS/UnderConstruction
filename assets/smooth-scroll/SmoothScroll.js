@@ -206,7 +206,7 @@ function scrollArray(elem, left, top) {
     // push a scroll command
     que.push({
         x: left, 
-        y: top, 
+        y: top+5, 
         lastX: (left < 0) ? 0.99 : -0.99,
         lastY: (top  < 0) ? 0.99 : -0.99, 
         start: Date.now()
@@ -509,7 +509,7 @@ function overflowingAncestor(el) {
 }
 
 function isContentOverflowing(el) {
-    return (el.clientHeight + 10 < el.scrollHeight);
+    return (el.clientHeight + 0 < el.scrollHeight);
 }
 
 // typically for <body> and <html>

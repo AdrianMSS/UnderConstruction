@@ -10,9 +10,10 @@
 
 	    var target = this.hash;
 	    var $target = $(target);
+	    var posy = $target.offset().top - 97;
 
 	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
+	        'scrollTop': posy
 	    }, 900, function () {
 	        window.location.hash = target;
 	    });

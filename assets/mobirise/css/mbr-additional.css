@@ -95,5 +95,8 @@
   background: white;
 }
 #menu-30 .mbr-navbar__hamburger {
-  color: #ffffff;
+  color: #07074E;
+}
+#menu-30 .mbr-hamburger--open{
+  color: white;
 }

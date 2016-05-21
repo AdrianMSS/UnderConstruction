@@ -1131,6 +1131,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+.img-responsive{
+  max-width: 80%;
+  margin: auto;
+}
 .img-rounded {
   border-radius: 0px;
 }

@@ -42,7 +42,7 @@ html {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background-color: rgba(178,210,53,.8);
+    background-color: rgba(178,210,53,.7);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -119,10 +119,6 @@ html {
 
 .team-box .team-box-caption .team-box-caption-content .project-name {
     font-size: 18px;
-}
-
-.project-name{
-  color: #07074E;
 }
 
 .team-box:hover .team-box-caption {
@@ -1139,7 +1135,7 @@ html {
 }
 .mbr-reviews__author-bio {
   color: #999;
-  font-size: 14px;
+  font-size: 12px;
 }
 @media (max-width: 767px) {
   .mbr-reviews__author {
@@ -1743,11 +1739,4 @@ html {
 }
 .blogText{
   font-size: 25px;
-}
-.unavailableDiv{
-  color: black;
-}
-.divPadding{
-  padding-left: 20px;
-  padding-right: 20px;
 }

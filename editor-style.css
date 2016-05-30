@@ -23,7 +23,17 @@ box-sizing: border-box;
 html { font-family: 'Josefin Sans', sans-serif; font-size: 62.5%; }
 body { font-family: 'Josefin Sans', sans-serif; font-size: 1.8em; font-weight: 400; }
 
-.button { display: inline-block; height: auto; padding: .55em .8em .5em .8em; font-weight: normal; font-size: .85em; line-height: 1; text-align: center; cursor: pointer; border: 2px solid; border-radius: 20px; background: transparent; margin: -2px .5em 0 0; text-decoration: none !important; letter-spacing: 0.1em; color: #EA8E00; z-index: 2; overflow: hidden; position: relative; vertical-align: middle; outline: 0; 
+.button { display: inline-block; height: auto; 
+	padding: .55em .8em .5em .8em; 
+	font-weight: normal; 
+	font-size: .85em; line-height: 1; 
+	text-align: center; cursor: pointer; border: 2px solid; 
+	border-radius: 20px; 
+	background: transparent; margin: -2px .5em 0 0; 
+	text-decoration: none !important; letter-spacing: 0.1em; 
+	color: #B2D235; z-index: 2; 
+	overflow: hidden; 
+	position: relative; vertical-align: middle; outline: 0; 
 -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -ms-transition: all .4s ease; -o-transition: all .4s ease; transition: all .4s ease; }
 
 h1 { font-weight: normal; font-size: 1.7em; margin: 0 0 .5em 0; line-height: 1.4; }

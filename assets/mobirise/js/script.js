@@ -88,6 +88,8 @@
 
     $(function(){
 
+        var skillsBar = true;
+
         $('html').addClass($.isMobile() ? 'mobile' : 'desktop');
 
         // .mbr-navbar--sticky
@@ -97,7 +99,38 @@
                 $(this)[method]('mbr-navbar--stuck')
                     .not('.mbr-navbar--open')[method]('mbr-navbar--short');
             });
+
+            var skillsPos = $('#skills').outerHeight() - $(window).scrollTop(); 
+            if(skillsBar && skillsPos < 400){
+                skillsBar = false;
+                progressBar(1);
+            }
         });
+
+        //progress
+        function progressBar(num) {
+            switch(num){
+                case 1:
+                    $('.progressbar-bar1').addClass('progressbar1');
+                    setTimeout(progressBar, 750, 2)
+                    break;  
+                case 2:
+                    $('.progressbar-bar2').addClass('progressbar2');
+                    setTimeout(progressBar, 750, 3)
+                    break;
+                case 3:
+                    $('.progressbar-bar3').addClass('progressbar3');
+                    setTimeout(progressBar, 750, 4)
+                    break;  
+                case 4:
+                    $('.progressbar-bar4').addClass('progressbar4');
+                    setTimeout(progressBar, 750, 5)
+                    break;  
+                case 5:
+                    $('.progressbar-bar5').addClass('progressbar5');
+                    break;  
+            }
+        };
 
         // .mbr-hamburger
         $(document).on('add.cards change.cards', function(event){
@@ -413,7 +446,7 @@
 
 })(jQuery);
 !function() {
-	document.getElementsByClassName('engine')[0].getElementsByTagName('a')[0].removeAttribute('rel');
+	/*document.getElementsByClassName('engine')[0].getElementsByTagName('a')[0].removeAttribute('rel');
 
     if(!document.getElementById('top-1')) {
         var e = document.createElement("section");
@@ -421,5 +454,5 @@
         e.className = "engine";
         e.innerHTML = '<a href="https://mobirise.com">mobirise.com</a> Mobirise v2.9.8';
         document.body.insertBefore(e, document.body.childNodes[0]);
-    }
+    }*/
 }();

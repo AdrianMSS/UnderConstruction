@@ -1127,13 +1127,10 @@ img {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
+  margin: auto;
   display: block;
   max-width: 100%;
   height: auto;
-}
-.img-responsive{
-  max-width: 95%;
-  margin: auto;
 }
 .img-rounded {
   border-radius: 0px;

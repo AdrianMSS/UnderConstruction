@@ -14,7 +14,7 @@ var app = express();
  
 app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
 app.use(bodyParser());
-app.use(express.static(__dirname));
+app.use(express.static(__dirname+'/webpage'));
 
 var generator = require('xoauth2').createXOAuth2Generator({
     user: 'adriansanchez.logn',

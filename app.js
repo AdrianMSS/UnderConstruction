@@ -12,9 +12,9 @@ var express = require('express'),
     cors = require('cors');
 
 //REST APIS
-var  organizationImagine = require('./services/imagine'),
+/*var  organizationImagine = require('./services/imagine'),
     database = require('./services/database'),
-    googleApi = require('./services/google');
+    googleApi = require('./services/google');*/
 
 /*
 Seconds: 0-59
@@ -29,10 +29,15 @@ Day of Week: 0-6*/
     }, null, true, null);*/
  
 var app = express();
-app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
-app.use(bodyParser());
+app.use(express.logger('dev')); 
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+app.use(express.static(__dirname + '/webpage2'));
 //app.use('/hwthon2015', express.static(__dirname + '/hwthon2015'));
-app.use(express.static(__dirname + '/webpage'));
+/*app.use(express.static(__dirname + '/webpage'));
 app.use('/whatsnear', express.static(__dirname + '/whatsnear'));
 app.use('/javisstops', express.static(__dirname + '/javisstops'));
 app.use('/grades', express.static(__dirname + '/grades'));
@@ -96,7 +101,7 @@ app.post('/susbscribe/', function (req, res) {
       organizationImagine.addSubscribe(req, res, req.body.email);
     }
   });
-});
+});*/
 
 app.get('*', function (req, res) {
     res.redirect('../#home', 404);

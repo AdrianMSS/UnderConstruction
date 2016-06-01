@@ -3,8 +3,7 @@
 * @author Adrián Sánchez <adriansanchez.logn@gmail.com>
 */
 
-var mongo = require('mongodb');
-var mongoose = require ("mongoose"); // The reason for this demo.
+var mongo = require('mongodb'); // The reason for this demo.
 
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.  
@@ -27,7 +26,6 @@ var uristring =
 });
 */
 
-var uri = 'mongodb://user:pass@host:port/db';
 var db;
 
 mongo.MongoClient.connect(uristring, function(err, database) {

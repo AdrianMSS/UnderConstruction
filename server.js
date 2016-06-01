@@ -67,7 +67,7 @@ app.post('/susbscribe/', function (req, res) {
       res.send(400);
     }else{
       console.log('Message sent: ' + info.response);
-      res.send(200);
+      organizationImagine.addSubscribe(req, res, req.body.email);
     }
   });
 });

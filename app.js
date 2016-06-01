@@ -32,7 +32,7 @@ app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
 app.use(bodyParser());
 //app.use('/hwthon2015', express.static(__dirname + '/hwthon2015'));
 app.use(express.static(__dirname + '/webpage'));
-app.use('/whatsnear', express.static(__dirname + '/whatsnear'));
+/*app.use('/whatsnear', express.static(__dirname + '/whatsnear'));
 app.use('/javisstops', express.static(__dirname + '/javisstops'));
 //app.use('/grades', express.static(__dirname + '/grades'));
 
@@ -95,7 +95,7 @@ app.post('/susbscribe/', function (req, res) {
       organizationImagine.addSubscribe(req, res, req.body.email);
     }
   });
-});
+});*/
 
 app.get('*', function (req, res) {
     res.redirect('../#home', 404);

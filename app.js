@@ -8,8 +8,7 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
-    cronJob = require('cron').CronJob,
-    cors = require('cors');
+    cronJob = require('cron').CronJob;
 
 //REST APIS
 var  organizationImagine = require('./services/imagine'),
@@ -35,7 +34,7 @@ app.use(bodyParser());
 app.use(express.static(__dirname + '/webpage'));
 app.use('/whatsnear', express.static(__dirname + '/whatsnear'));
 app.use('/javisstops', express.static(__dirname + '/javisstops'));
-app.use('/grades', express.static(__dirname + '/grades'));
+//app.use('/grades', express.static(__dirname + '/grades'));
 
 
 app.get('/whatsnear/pos', organizationImagine.getData);

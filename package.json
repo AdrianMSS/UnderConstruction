@@ -1,7 +1,7 @@
 {
-  "name": "ConstruXYZ",
+  "name": "imagineXYZ",
   "version": "0.2.0",
-  "description": "Imagine Server with MongoDb",
+  "description": "Imagine Server",
   "main": "app.js",
   "engines" : { 
       "node" : "0.10.31",
@@ -10,14 +10,10 @@
   "authors": [ "Adrián Sánchez"],
   "dependencies": {
     "express": "3.x",
-    "mongodb": "*",
     "nodemailer": "*",
     "cookie-parser": "*",
     "body-parser": "*",
-    "cron": "*",
-    "xoauth2": "*",
-    "cors": "*",
-    "https": "*"
+    "xoauth2": "*"
   }
 }
 

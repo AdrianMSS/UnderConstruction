@@ -7,27 +7,14 @@
 var express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    nodemailer = require('nodemailer'),
-    cronJob = require('cron').CronJob,
-    cors = require('cors');
+    nodemailer = require('nodemailer');
 
 //REST APIS
 /*var  organizationImagine = require('./services/imagine'),
     database = require('./services/database'),
     googleApi = require('./services/google');
 */
-/*
-Seconds: 0-59
-Minutes: 0-59
-Hours: 0-23
-Day of Month: 1-31
-Months: 0-11
-Day of Week: 0-6*/
-/*new cronJob('0 59 * * * *', function(){
-        //console.log("CronJob")
-        organizationImagine.hourScript();
-    }, null, true, null);*/
- 
+
 var app = express();
 app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
 app.use(bodyParser());
@@ -37,10 +24,6 @@ app.use(express.static(__dirname + '/webpage'));
 app.use('/javisstops', express.static(__dirname + '/javisstops'));
 app.use('/grades', express.static(__dirname + '/grades'));
 
-app.get('/*', function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
 
 app.get('/whatsnear/pos', organizationImagine.getData);
 app.get('/javisstops/pos', organizationImagine.getData);

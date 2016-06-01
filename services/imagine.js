@@ -26,6 +26,11 @@ mongo.MongoClient.connect(uristring, function(err, database) {
 });
 
 
+Date.prototype.addHours= function(h){
+    this.setHours(this.getHours()+h);
+    return this;
+}
+
 exports.getData = function(req,res) {db.collection('Imagine').find({}, {_id:0}).toArray(function(err, doc){
       if(err) res.send(400, err);
       res.send(200, doc);

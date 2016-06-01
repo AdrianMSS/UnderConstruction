@@ -10,6 +10,7 @@
   "authors": [ "Adrián Sánchez"],
   "dependencies": {
     "express": "3.x",
+    "mongodb": "*",
     "nodemailer": "*",
     "cookie-parser": "*",
     "body-parser": "*",

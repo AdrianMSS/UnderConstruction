@@ -9,6 +9,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer');
  
+var organizationImagine = require('./services/imagine');
+
 var app = express();
 
  

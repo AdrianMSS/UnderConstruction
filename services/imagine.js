@@ -3,7 +3,8 @@
 * @author Adrián Sánchez <contact@imaginexyz.com>
 */
 
-var mongo = require('mongodb'); // The reason for this demo.
+var mongo = require('mongodb');
+var mongoose = require ("mongoose"); // The reason for this demo.
 
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.  
@@ -14,6 +15,7 @@ var uristring =
   'mongodb://localhost/Hardwarethon';
 
 var db;
+
 
 Date.prototype.addHours= function(h){
     this.setHours(this.getHours()+h);
@@ -35,14 +37,6 @@ exports.getData = function(req,res) {db.collection('Imagine').find({}, {_id:0}).
       if(err) res.send(400, err);
       res.send(200, doc);
   })
-}
-
-exports.addSubscribe = function(req,res, email) {
-  var now = new Date().addHours(-6);
-  db.collection('Subscribe').update({_id:email}, {time:now}, {upsert: true, new: true},function(err, doc) {
-    if(err) res.send(400, err);
-    res.send(200, true);
-  });
 }
 
 nmeaTOgps = function(pos, type){

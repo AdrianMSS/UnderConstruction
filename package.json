@@ -1,5 +1,5 @@
 {
-  "name": "Under Construction",
+  "name": "Constr XYZ",
   "version": "0.2.0",
   "description": "Imagine Server with MongoDb",
   "main": "app.js",
@@ -9,6 +9,7 @@
   },
   "authors": [ "Adrián Sánchez"],
   "dependencies": {
+    "mongoose": "3.8.15",
     "express": "3.x",
     "mongodb": "*",
     "nodemailer": "*",

@@ -41,7 +41,7 @@ app.post('/email/', function (req, res) {
     mailOptions = {
     to: 'sesamaua@gmail.com', // receiver
      subject: 'ImagineXYZ: Desde la pagina web - Fecha: ' + fecha, // subject
-     text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Phone: ' + req.body['phone'] + '. \n'  + 'Message: ' + req.body['message'] // body
+     text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Message: ' + req.body['message'] // body
      };
   transporter.sendMail(mailOptions, function(error, info){
     if(error){
@@ -57,7 +57,7 @@ app.post('/email/', function (req, res) {
 app.post('/susbscribe/', function (req, res) {
     var fecha = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     mailOptions = {
-    to: 'sesamaua@gmail.com', // receiver
+    to: 'contact@imaginexyz.com', // receiver
      subject: 'ImagineXYZ: Susbcripción a la pagina web - Fecha: ' + fecha, // subject
      text: 'Email: ' + req.body['email'] // body
      };

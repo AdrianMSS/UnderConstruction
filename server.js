@@ -36,8 +36,14 @@ var transporter = nodemailer.createTransport(({
     }
 }));
 
+//Función para el manejo de la zona horaria
+Date.prototype.addHours= function(h){
+    this.setHours(this.getHours()+h);
+    return this;
+}
+
 app.post('/email/', function (req, res) {
-    var fecha = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+    var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     mailOptions = {
     to: 'contact@imaginexyz.com', // receiver
      subject: 'ImagineXYZ: Desde la pagina web - Fecha: ' + fecha, // subject
@@ -55,7 +61,7 @@ app.post('/email/', function (req, res) {
 });
 
 app.post('/susbscribe/', function (req, res) {
-    var fecha = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+    var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     mailOptions = {
     to: 'contact@imaginexyz.com', // receiver
      subject: 'ImagineXYZ: Susbcripción a la pagina web - Fecha: ' + fecha, // subject

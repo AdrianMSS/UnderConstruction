@@ -13,14 +13,11 @@
     <meta property="og:site_name" content="Imagine XYZ">
     <meta name="twitter:url" content="https://twitter.com/imaginexyz">
     <meta name="twitter:creator" content="@imaginexyz">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="..\..\pictures\favicon.ico">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../styles/bootstrap.css">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Adobe Typekit -->
     <script type="text/javascript" src="../../use.typekit.net/ali4ccc.js"></script>
@@ -48,7 +45,7 @@
     <!-- End Google Tag Manager -->
     <div class="wrapper">
       <header class="header ">
-        <button class="btn-menu js-toggle-menu">
+        <button class="btn-menu js-toggle-menu" id="closeButton">
           <span class="lines">
             <span></span>
             <span></span>
@@ -152,7 +149,7 @@
                         </a>
               </li>
               <li>
-                <a id="menu-contact-1" href="#contact-us">Contact
+                <a id="menu-contact-1">Contact
                         <div class="splashes">
                             <i class="b-1"></i>
                             <i class="b-2"></i>
@@ -322,20 +319,7 @@
             <div class="section-body">
               <p style="max-width: 410px;margin: 0 auto 42px;line-height: 1.42;color:#6d6e71;font-weight: 300;">We're always on the lookout for high impact opportunities</p>
               <div class="form-contacts">
-                <form class="form form--contactUs" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-                  <input type="hidden" name="action" value="amForms/submissions/saveSubmission">
-                  <input type="hidden" name="handle" value="contactUs">
-                  <input type="hidden" name="redirect" value="https://imaginexyz/en/success">
-                  <div class="yourssince1615__wrapper">
-                    <label>Leave this field blank</label>
-                    <input type="text" id="yourssince1615" name="yourssince1615" value="">
-                  </div>
-                  <style>
-                    .yourssince1615__wrapper{ display: none; }
-                  </style>
-                  <input type="hidden" id="__UATIME" name="__UATIME" value="1471738037">
-                  <input type="hidden" id="__UAHOME" name="__UAHOME" value="759ca24181ad2e2a4dd7b3ca327cfd0c">
-                  <input type="hidden" id="__UAHASH" name="__UAHASH" value="f4dc52dc3fcbe0213751c3bcb87bf439">
+                <form id="formDiv" class="form form--contactUs">
                   <fieldset>
                     <div class="form__row form__row--plaintext" id="fields-fullName-field">
                       <div class="form__label" style="color:#6d6e71;">
@@ -372,27 +356,24 @@
                   </fieldset>
                   <div class="form__note">Fields with a * are required</div>
                   <div class="buttons">
-                    <button class="button" type="submit" style="color:#6d6e71; border: 2px solid #e6e7e8" name="send">Send message</button>
+                    <button id="sendButton" class="button" style="color:#6d6e71; border: 2px solid #e6e7e8">Send message</button>
                   </div>
                 </form>
               </div>
               <!-- /.form-contacts -->
               <div class="subscribe mobile-hidden" style="margin-top:40px;">
-                <form action="http://house.us12.list-manage.com/subscribe/post?u=0d02b10dfb76e8f6ba6791b61&amp;id=fa07c5ada3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+                <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
                   <label style="color:#6d6e71">SIGN UP FOR OUR NEWSLETTER</label>
                   <div class="form-cols">
                     <div class="form-col form-col-1of4">
                       <input type="text" class="field" value="" name="FNAME" id="mce-FNAME" placeholder="First Name">
                     </div>
-                    <!--<div class="form-col form-col-1of4">
-								<input type="text" value="" name="LNAME" class="field" id="mce-LNAME" placeholder="Last Name" />
-							</div>-->
                     <div class="form-col form-col-2of4">
-                      <input type="email" value="" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="E-mail address">
+                      <input type="email" name="EMAIL" class="required email field" id="mce-EMAIL" placeholder="E-mail address" required>
                     </div>
                     <!-- /.form-col form-col-2of4 -->
                     <div class="form-col form-col-size1">
-                      <input type="submit" value="SIGN UP" name="subscribe" id="mc-embedded-subscribe" class="btn btn-block btnsign" style="color:#6d6e71">
+                      <input type="submit" value="SIGN UP" id="mc-embedded-subscribe" class="btn btn-block btnsign" style="color:#6d6e71">
                     </div>
                     <!-- /.form-col form-col-1of4 -->
                   </div>
@@ -445,6 +426,7 @@
     <!-- <script type="text/javascript">stLight.options({publisher: "18abc05a-9598-4662-80de-93af44f4b22a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script> -->
     <!-- App JS -->
     <script src="../scripts/app.js"></script>
+    <script src="../scripts/imagine.js"></script>
     <script type="text/javascript">
       window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c3340453a8","applicationID":"13732355","transactionName":"NQcBZUUFDRdZVERRDAxNIlJDDQwKF3RCWQUWPjdUWhQPBUxSQ3sMDBYRXlsIBhYXRVVWBwcQ","queueTime":0,"applicationTime":402,"atts":"GUACEw0fHhk=","errorBeacon":"bam.nr-data.net","agent":""}
     </script>

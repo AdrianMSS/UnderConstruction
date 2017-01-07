@@ -42,7 +42,7 @@ app.post('/email/', function (req, res) {
     to: 'contact@imaginexyz.com', // receiver
      subject: 'ImagineXYZ: Desde la pagina web - Fecha: ' + fecha, // subject
      text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Message: ' + req.body['message'] // body
-     };
+  };
   transporter.sendMail(mailOptions, function(error, info){
     if(error){
       console.log(error);
@@ -59,8 +59,8 @@ app.post('/susbscribe/', function (req, res) {
     mailOptions = {
     to: 'contact@imaginexyz.com', // receiver
      subject: 'ImagineXYZ: Susbcripción a la pagina web - Fecha: ' + fecha, // subject
-     text: 'Email: ' + req.body['email'] // body
-     };
+     text: 'Email: ' + req.body['email'] + '\n Name: '+ req.body['name']// body
+  };
   transporter.sendMail(mailOptions, function(error, info){
     if(error){
       console.log(error);

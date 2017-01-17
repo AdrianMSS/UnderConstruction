@@ -1,6 +1,9 @@
 (function($) {
     "use strict"; // Start of use strict
 
+    $( document ).ready(function() {
+	    $('html').removeClass();
+	});
 
     // Contact Button
     $('#menu-contact-1').click(function(e) {

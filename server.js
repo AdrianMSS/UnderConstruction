@@ -78,6 +78,20 @@ app.post('/susbscribe/', function (req, res) {
   });
 });
 
+var remora = {};
+
+app.post('/remora/', function (req, res) {
+    console.log('post');
+    console.log(req.body);
+    remora = req.body;
+    res.send(200,remora);
+});
+
+app.get('/remora/', function (req, res) {
+    console.log('get');
+    res.send(200,remora);
+});
+
 app.get('*', function (req, res) {
     res.redirect('../#home', 404);
 });

@@ -79,11 +79,19 @@ app.post('/susbscribe/', function (req, res) {
 });
 
 var remora = {};
+hex2a = function(hexx) {
+    var hex = hexx.toString();//force conversion
+    var str = '';
+    for (var i = 0; i < hex.length; i += 2)
+        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    return str;
+}
 
 app.post('/remora/', function (req, res) {
     console.log('post');
     console.log(req.body);
     remora = req.body;
+    remora.data = hex2a(remora.data);
     res.send(200,remora);
 });
 

@@ -46,7 +46,7 @@ app.post('/email/', function (req, res) {
     var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     mailOptions = {
     to: 'contact@imaginexyz.com', // receiver
-     subject: 'ImagineXYZ: Desde la pagina web - Fecha: ' + fecha, // subject
+     subject: 'ImagineXYZ: WebPage Message - Fecha: ' + fecha, // subject
      text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Message: ' + req.body['message'] // body
   };
   transporter.sendMail(mailOptions, function(error, info){
@@ -64,7 +64,77 @@ app.post('/susbscribe/', function (req, res) {
     var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     mailOptions = {
     to: 'contact@imaginexyz.com', // receiver
-     subject: 'ImagineXYZ: Susbcripción a la pagina web - Fecha: ' + fecha, // subject
+     subject: 'ImagineXYZ: Subscription - Fecha: ' + fecha, // subject
+     text: 'Email: ' + req.body['email'] + '\n Name: '+ req.body['name']// body
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+      console.log(error);
+      res.send(400);
+    }else{
+      console.log('Message sent: ' + info.response);
+      organizationImagine.addSubscribe(req, res, req.body.email);
+    }
+  });
+});
+app.post('/es/email/', function (req, res) {
+    var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+    mailOptions = {
+    to: 'contact@imaginexyz.com', // receiver
+     subject: 'ImagineXYZ: Mensaje de la Página Web - Fecha: ' + fecha, // subject
+     text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Message: ' + req.body['message'] // body
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+      console.log(error);
+      res.send(400);
+    }else{
+      console.log('Message sent: ' + info.response);
+      res.send(200);
+    }
+  });
+});
+
+app.post('/es/susbscribe/', function (req, res) {
+    var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+    mailOptions = {
+    to: 'contact@imaginexyz.com', // receiver
+     subject: 'ImagineXYZ: Susbcripción - Fecha: ' + fecha, // subject
+     text: 'Email: ' + req.body['email'] + '\n Name: '+ req.body['name']// body
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+      console.log(error);
+      res.send(400);
+    }else{
+      console.log('Message sent: ' + info.response);
+      organizationImagine.addSubscribe(req, res, req.body.email);
+    }
+  });
+});
+app.post('/fr/email/', function (req, res) {
+    var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+    mailOptions = {
+    to: 'contact@imaginexyz.com', // receiver
+     subject: 'ImagineXYZ: Le Message - Fecha: ' + fecha, // subject
+     text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Message: ' + req.body['message'] // body
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+      console.log(error);
+      res.send(400);
+    }else{
+      console.log('Message sent: ' + info.response);
+      res.send(200);
+    }
+  });
+});
+
+app.post('/fr/susbscribe/', function (req, res) {
+    var fecha = new Date().addHours(-6).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+    mailOptions = {
+    to: 'contact@imaginexyz.com', // receiver
+     subject: 'ImagineXYZ: Susbcripción Francés - Fecha: ' + fecha, // subject
      text: 'Email: ' + req.body['email'] + '\n Name: '+ req.body['name']// body
   };
   transporter.sendMail(mailOptions, function(error, info){

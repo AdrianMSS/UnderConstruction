@@ -48,7 +48,7 @@ app.post('/email/', function (req, res) {
     mailOptions = {
     to: 'contact@imaginexyz.com', // receiver
      subject: 'ImagineXYZ: WebPage Message - Fecha: ' + fecha, // subject
-     text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Message: ' + req.body['message'] // body
+     text: 'Email: ' + req.body['email'] + '. \n'+ 'Name: ' + req.body['name'] + '. \n'+ 'Subject: ' + req.body['subject'] + '. \n'+ 'Message: ' + req.body['message'] // body
   };
   transporter.sendMail(mailOptions, function(error, info){
     if(error){

@@ -11,7 +11,7 @@
   "dependencies": {
     "express": "3.x",
     "mongodb": "*",
-    "nodemailer": "*",
+    "nodemailer": "0.7.1",
     "cookie-parser": "*",
     "body-parser": "*",
     "xoauth2": "*"

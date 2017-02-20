@@ -1,4 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-bert.house	TRUE	/	FALSE	1999999999	CraftSessionId	1ofppao4h8m26fdjb8hcvqdf92
-
